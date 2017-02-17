@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qybx.mapper.ServiceInListMapperExt">
+
+  <select id="selectServiceInHistoryAll" resultType="com.qybx.po.HistoryIndex">
+  
+     SELECT 
+          DISTINCT(in_service_name) historyName ,
+          in_base_index historyCode
+     FROM service_in_list 
+  
+  </select>
+</mapper>

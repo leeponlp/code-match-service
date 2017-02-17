@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qybx.mapper.ImportDataMapperExt" >
+    
+    
+    <insert id="addBatchwithImportData" parameterType="java.util.List">
+       INSERT INTO t_logogram (short_name,full_name) VALUES
+		<foreach collection="list" item="item" index="index" separator=",">
+			(
+				#{item.data1},
+				#{item.data2}
+			)
+		</foreach>
+    </insert>
+    
+    <insert id="addBatchPacxDiagnosisData" parameterType="java.util.List">
+       INSERT INTO t_pacx_diagnosis (code,position1,position2,diagnosis,classification) VALUES
+		<foreach collection="list" item="item" index="index" separator=",">
+			(
+				#{item.code},
+				#{item.position1},
+				#{item.position2},
+				#{item.diagnosis},
+				#{item.classification}
+			)
+		</foreach>
+    </insert>
+
+</mapper>
